@@ -1,0 +1,108 @@
+Tenemos un nuevo proyecto en Java, tenemos que hacerlo siguiendo las siguientes premisas:
+1. Que debe de hacer:
+El programa debe de poder controlar de forma interactiva un conjunto de televisores, esta matriz de televisores debe de ser gestionado por un menu interactivo, o poder ingresar comandos en un pront.
+
+2. El menu:
+
+a) Crear un Televisor nuevo, con los siguientes metadatos:
+    ID: Alfanumerico (debe de ser unico) 
+    Descripción:  Texto descriptivo de el Televisor
+    Grupo: a que grupo de televisores pertenece, el grupo sera los dos primero caracteres del ID del televisor. 
+    Volumen: 3  por defecto
+    Canal: 1    por defecto
+
+Datos adicionales:
+Los canales a configurar deberan de ser  del 1 al  999
+El volumen de  0 al 15, siendo  0 MUTE
+
+El canal por defecto es el 1 y el volumen es 3 (esto cuando se crea un televisor)
+
+Cada televisor debera de tener un ID de  4 caracteres alfanúmericos siguiendo la siguiente regla:
+ ABCD donde 
+A = Cualquier letra de la A a la Z
+B = Cualquier letra de la A a la Z
+C = cualquier numero de 0 al 9
+D = cualquier numero de 0 al 9
+
+Al momento de crearse un televisor, se asignara aleatoriamente un ID, que deberá de ser único y ser confirmado por el usuario o modificado si este lo desee.
+Obs.: si el usuario quisiera, podría modificar este ID a gusto en cualquier momento.
+
+b) Debera de ser guardada la configuracion en un archivo de texto plano, indicando en la primera linea del archivo la marca de la fecha y hora de la escritura de dicho archivo.
+
+c) Listar los televisores indicando su estado en un formato tipo tabla: 
+ 
+
+      TV        Grupo        Descripcion         Estado         Canal       Volumen    
+    +----+    +--------+  +---------------+    +--------+     +-------+    +--------+
+     ZZ01        #G01       Sala principal      Encendido        -1-          -3-
+
+Obs.: al imprimir la tabla en pantalla mantener la estetica de las lineas para una mejor lectura, asi como las tabulaciones.
+
+d) Poder seleccionar un televisor individualmente y controlar con el Menu de control individual de los televisores las siguientes funciones:
+    c.1 Apagar/Encender
+    c.2 Subir volumen en una unidad [+]
+    c.3 Bajar volumen en una unidad [-]
+    c.4 configurar un valor de volumen del 0 al  15
+    c.5 Seleccionar canal  debera de indicarse un canal del 1 al 999
+    c.6 subir canal en una unidad [+]
+    c.7 bajar canal en una unidad[-]
+    c.8 cambiar Descripcion
+    c.9 Mostrar su estado
+    c.10 Guardar los cambios de ese televisor (requiere un mensaje de confirmacion)
+    c.11 Eliminar del sistema (requiere un mensaje de confirmacion)
+
+
+e) Control todos los televisores con el Menu de control grupal a todos los televisores y ejecutar las siguientes acciones:
+    d.1 Apagar/Encender todos
+    d.2 Subir volumen en una unidad todos los televisores [+]
+    d.3 Bajar volumen en una unidad todos todos los televisores [-]
+    d.4 Seleccionar canal  (debera de indicarse un canal del 1 al 999) 
+    d.5 subir canal en una unidad todos los televisores [+]
+    d.6 bajar canal en una unidad todos los televisores [-]
+    d.8 Guardar los cambios en el archivo de configuracion
+    d.9 Guardar una lista de todos los televisores en un archivo independiente para exportarlo, en formato txt.
+    d.10 limpiar el archivo de configuracion (requiere un mensaje de confirmacion)
+
+
+f) guardar la configuración
+
+g) iniciar linea de comandos, donde los comandos deberan de ser:
+    > cambiar volumen: (el argumento sera el ID del televisor, el volumen, debera de devolver un mensaje de error si el volumen ingresado no corresponde de 0 a 15, y solicitar nuevamente ingresar el argumento correcto)
+    > cambiar volumen a todos: (el argumento sera el volumen nuevo de todos los televisores, debera de devolver un mensaje de error si el volumen ingresado no corresponde de 0 a 15, y solicitar nuevamente ingresar el argumento correcto) 
+    > Cambiar canal: (el argumento sera el ID del televisor, el canal, debera de devolver un mensaje de  error si el canal ingresado no corresponde de 0 a 999, y solicitar nuevamente ingresar el argumento correcto)
+    > Cambiar canal a todos: (el argumento sera el canal nuevo de todos los televisores, debera de devolver un mensaje de  error si el canal ingresado no corresponde de 0 a 999, y solicitar nuevamente ingresar el argumento correcto)
+    > Cambiar descripcion: (el argumento sera el ID del televisor, la nueva descripcion) 
+    > Cambiar ID: (el argumento sera el ID del televisor actual, el nuevo ID, debera de devolver un mensaje de erro si el ID nuevo no cumple con la regla y debera de solicitar nuevamente ingresar el argumento correcto) 
+    > Cambiar estado de Encendido/apagado: (el argumento sera el ID del televisor actual, su nuevo estado ON/OFF)
+    > Cambiar estado de Encendido/apagado de todos los televisores: (el argumento sera su nuevo estado ON/OFF)
+    > Guardar configuracion
+    > salir de la linea de comandos y volverl al menu principal 
+
+h) Salir del sistema (debera de preguntar si se desea guardar la configuracion actual)
+
+
+debemos de tener en cuenta el manejo de excepciones, podemos usar todas las funciones, formas de clases, interfaces y colecciones que forman parte del lenguaje java.
+
+Indicarme la estructura de directorios del proyecto, el manejo de archivo y todo el código completo para poder compilarlo con VisualEstudio Code, y poder crear el repositorio en GitHub.
+
+*******************************************
+/TVControlSystem
+|-- /src
+|   |-- /main
+|   |   |-- /java
+|   |   |   |-- Main.java
+|   |   |   |-- /models
+|   |   |   |   |-- TV.java
+|   |   |   |-- /services
+|   |   |   |   |-- TVService.java
+|   |   |   |-- /utils
+|   |   |   |   |-- FileManager.java
+|   |   |   |-- /commands
+|   |   |   |   |-- CommandHandler.java
+|-- /resources
+|   |-- config.txt
+|-- /test
+|   |-- /java
+|   |   |-- TVServiceTest.java
+|-- .gitignore
+|-- README.md

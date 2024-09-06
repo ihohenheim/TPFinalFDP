@@ -1,0 +1,5 @@
+Configuración guardada el: 2024-09-06 03:08:13
+SG90,TV sala 01,SG,9,301,true
+PZ51,TV sala 02,PZ,9,300,true
+UF94,TV hall l1,UF,9,300,true
+AA88,TV sala 02,AA,9,300,true
